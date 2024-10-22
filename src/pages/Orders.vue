@@ -13,35 +13,44 @@
         <tr>
           <td :colspan="columns.length">
             <v-card
-              class="mb-4"
+              class="ma-4"
               color="grey-darken-3"
               prepend-icon="mdi-package-variant"
               title="Order Items"
             >
               <v-card-text>
-                <v-simple-table>
-                  <template #default>
-                    <thead>
-                      <tr>
-                        <th class="text-left">Name</th>
-                        <th class="text-left">Brand</th>
-                        <th class="text-left">Quantity</th>
-                        <th class="text-left">Price</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr
-                        v-for="orderItem in item.orderItems"
-                        :key="orderItem.id"
-                      >
-                        <td>{{ orderItem.name }}</td>
-                        <td>{{ orderItem.brand }}</td>
-                        <td>{{ orderItem.quantity }}</td>
-                        <td>{{ formatCurrency(orderItem.price) }}</td>
-                      </tr>
-                    </tbody>
-                  </template>
-                </v-simple-table>
+                <v-row dense>
+                  <v-col
+                    v-for="orderItem in item.orderItems"
+                    :key="orderItem.id"
+                    cols="12"
+                    md="3"
+                    sm="6"
+                  >
+                    <v-card color="grey-darken-2" flat>
+                      <v-card-text>
+                        <v-row no-gutters>
+                          <v-col class="text-caption" cols="6">Name:</v-col>
+                          <v-col class="text-body-2" cols="6">{{
+                            orderItem.name
+                          }}</v-col>
+                          <v-col class="text-caption" cols="6">Brand:</v-col>
+                          <v-col class="text-body-2" cols="6">{{
+                            orderItem.brand
+                          }}</v-col>
+                          <v-col class="text-caption" cols="6">Quantity:</v-col>
+                          <v-col class="text-body-2" cols="6">{{
+                            orderItem.quantity
+                          }}</v-col>
+                          <v-col class="text-caption" cols="6">Price:</v-col>
+                          <v-col class="text-body-2" cols="6">{{
+                            formatCurrency(orderItem.price)
+                          }}</v-col>
+                        </v-row>
+                      </v-card-text>
+                    </v-card>
+                  </v-col>
+                </v-row>
               </v-card-text>
             </v-card>
           </td>
