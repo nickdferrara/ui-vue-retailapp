@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <v-container>
     <h1>Orders</h1>
     <p>This is the Orders page.</p>
-  </div>
+  </v-container>
 </template>
 
 <script lang="ts" setup>

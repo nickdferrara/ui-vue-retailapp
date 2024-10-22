@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <v-container>
     <h1>Shipping</h1>
     <p>This is the Shipping page.</p>
-  </div>
+  </v-container>
 </template>
 
 <script lang="ts" setup>

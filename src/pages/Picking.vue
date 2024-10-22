@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <v-container>
     <h1>Picking</h1>
     <p>This is the Picking page.</p>
-  </div>
+  </v-container>
 </template>
 
 <script lang="ts" setup>

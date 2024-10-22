@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <v-container>
     <h1>Invoices</h1>
     <p>This is the Invoices page.</p>
-  </div>
+  </v-container>
 </template>
 
 <script lang="ts" setup>
