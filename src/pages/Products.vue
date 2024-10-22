@@ -24,7 +24,6 @@
       </template>
     </v-data-table>
 
-    <!-- Add round FAB button -->
     <v-btn class="fab-button" color="primary" icon to="/addproduct">
       <v-icon>mdi-plus</v-icon>
     </v-btn>

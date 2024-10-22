@@ -57,6 +57,10 @@
         </tr>
       </template>
     </v-data-table>
+
+    <v-btn class="fab-button" color="primary" icon to="/addorder">
+      <v-icon>mdi-plus</v-icon>
+    </v-btn>
   </v-container>
 </template>
 
@@ -117,3 +121,17 @@ onMounted(() => {
   fetchOrders();
 });
 </script>
+
+<style scoped>
+.products-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.fab-button {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 5;
+}
+</style>
