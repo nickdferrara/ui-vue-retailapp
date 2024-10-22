@@ -11,7 +11,14 @@ import { routes } from 'vue-router/auto-routes'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: setupLayouts(routes),
+  routes: setupLayouts([
+    ...routes,
+    { path: '/products', component: () => import('@/pages/Products.vue') },
+    { path: '/orders', component: () => import('@/pages/Orders.vue') },
+    { path: '/picking', component: () => import('@/pages/Picking.vue') },
+    { path: '/shipping', component: () => import('@/pages/Shipping.vue') },
+    { path: '/invoices', component: () => import('@/pages/Invoices.vue') },
+  ]),
 })
 
 // Workaround for https://github.com/vitejs/vite/issues/11804
