@@ -8,3 +8,9 @@
 // @use 'vuetify/settings' with (
 //   $color-pack: false
 // );
+
+.hover-effect {
+  &:hover {
+    background-color: lightgray;
+  }
+}

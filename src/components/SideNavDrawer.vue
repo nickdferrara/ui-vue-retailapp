@@ -1,19 +1,22 @@
 <template>
   <v-navigation-drawer permanent clipped>
-    <v-list>
-      <v-list-item
-        v-for="item in items"
-        :key="item.title"
-        :to="item.route"
-      >
-        <v-list-item-icon>
-          <v-icon>{{ item.icon }}</v-icon>
-        </v-list-item-icon>
-        <v-list-item-content>
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
+    <v-list-item-group>
+      <v-list>
+        <v-list-item
+          v-for="item in items"
+          :key="item.title"
+          :to="item.route"
+          class="hover-effect"
+        >
+          <v-list-item-content>
+            <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-list-item-group>
   </v-navigation-drawer>
 </template>
 
@@ -26,3 +29,9 @@ const items = [
   { title: 'Invoices', icon: 'mdi-file-document', route: '/invoices' },
 ]
 </script>
+
+<style scoped>
+.hover-effect:hover {
+  background-color: lightgray;
+}
+</style>
