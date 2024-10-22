@@ -1,6 +1,17 @@
 <template>
   <v-container>
-    <h1>Add New Product</h1>
+    <!-- Back button -->
+    <v-btn
+      class="ma-2"
+      color="primary"
+      icon
+      style="position: absolute; top: 16px; left: 16px"
+      @click="goBack"
+    >
+      <v-icon>mdi-arrow-left</v-icon>
+    </v-btn>
+
+    <h1 class="mt-10">Add New Product</h1>
     <v-form @submit.prevent="submitProduct">
       <v-text-field v-model="product.name" label="Product Name" required />
       <v-text-field v-model="product.brand" label="Brand" required />
@@ -26,12 +37,16 @@ const product = ref({
 
 const submitProduct = async () => {
   try {
-    // Assuming you have an addProduct action in your store
     await productStore.addProduct(product.value);
     router.push("/products");
   } catch (error) {
     console.error("Error adding product:", error);
     // Handle error (e.g., show an error message to the user)
   }
+};
+
+// New function to handle going back to the products page
+const goBack = () => {
+  router.push("/products");
 };
 </script>
