@@ -50,35 +50,35 @@
 </template>
 
 <script setup lang="ts">
-  import { useProductStore } from '@/stores/products'
-  import { ref } from 'vue'
-  import { useRouter } from 'vue-router'
+import { useProductStore } from "@/stores/products";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
 
-  const productStore = useProductStore()
-  const router = useRouter()
+const productStore = useProductStore();
+const router = useRouter();
 
-  const product = ref({
-    name: '',
-    brand: '',
-    description: '',
-  })
+const product = ref({
+  name: "",
+  brand: "",
+  description: "",
+});
 
-  const isSubmitting = ref(false)
+const isSubmitting = ref(false);
 
-  const submitProduct = async () => {
-    isSubmitting.value = true
-    try {
-      await productStore.addProduct(product.value)
-      router.push('/products')
-    } catch (error) {
-      console.error('Error adding product:', error)
+const submitProduct = async () => {
+  isSubmitting.value = true;
+  try {
+    await productStore.addProduct(product.value);
+    router.push("/products");
+  } catch (error) {
+    console.error("Error adding product:", error);
     // Handle error (e.g., show an error message to the user)
-    } finally {
-      isSubmitting.value = false
-    }
+  } finally {
+    isSubmitting.value = false;
   }
+};
 
-  const goBack = () => {
-    router.push('/products')
-  }
+const goBack = () => {
+  router.push("/products");
+};
 </script>
